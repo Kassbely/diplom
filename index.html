@@ -190,38 +190,39 @@
           </div>
         </div>
       </dialog> -->
-    
+
 <!-- header start -->
       <header id="header">
-        <div class="container">
-          <a href="#" class="avatar"><img src="/img/11.png" alt="" /></a>
-          <h4><strong>Я Александра Белякова</strong><br />
-                художник-керамист <br />
-                с  любовью к творчеству</h4>
-            <section id="sidebar" class="mt-4">
-                <div>
-                    <ul>
-                        <li class="nav-item"><a href="#one" class="nav-link">Мои работы</a></li>
-                        <li class="nav-item"><a href="#two" class="nav-link">Обо мне</a></li>
-                        <li class="nav-item"><a href="#three" class="nav-link">FAQ</a></li>
-                        <li class="nav-item"><a href="#four" class="nav-link">Контакты</a></li>
-                    </ul>
-                </div>
-            </section>
-            <br>
-            <section class="listButtons">
-                <ul>
-                  <li><p>Быстрая связь с создателем</p> <button class="btn" onclick="window.open('https://t.me/Userjusthuman')" type="button">
-                    <i class="fa-brands fa-telegram fa-lg" style="color: #000000;"></i> Telegramm</button></li>
-                  <li><p>На кофе и круасанчики </p>
-                    <button class="btn" type="button" data-toggle="modal" data-target="#qr">
-                      <i class="fa-solid fa-heart fa-lg" style="color: #000000;"></i> Курасооон</button>
-                  </li>
-                </ul>
-            </section>
+        <div class="container header-content">
+            <a href="#" class="avatar"><img src="/img/11.png" alt="" /></a>
+          <div class="text-center" id="text">
+            <h5><strong>Александра Белякова</strong><br />
+                  художник-керамист <br />
+                  с  любовью к творчеству</h5>
+          </div>
+          <div>
+            <ul class="nav-list">
+                <li><a href="#one" class="nav-link">Мои работы</a></li>
+                <li><a href="#two" class="nav-link">Обо мне</a></li>
+                <li><a href="#three" class="nav-link">FAQ</a></li>
+                <li><a href="#four" class="nav-link">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="listButtons">
+            <ul>
+              <li><p>Быстрая связь с создателем</p> <button class="btn" onclick="window.open('https://t.me/Userjusthuman')" type="button">
+                <i class="fa-brands fa-telegram fa-lg" style="color: #000000;"></i> Telegramm</button></li>
+              <li><p>На кофе и круасанчики </p>
+                <button class="btn" type="button" data-toggle="modal" data-target="#qr">
+                  <i class="fa-solid fa-heart fa-lg" style="color: #000000;"></i> Курасооон</button>
+              </li>
+            </ul>
+          </div>
         </div>
       </header>
 <!-- header end -->
+
+
 
 <!-- main start -->
         <main>
@@ -261,14 +262,14 @@
 <!-- Two -->
             <section id="two">
               <h1 class="text-center">Обо мне</h1>
-              <div class="container">
-                <div class="row">
-                  <div class="col-8" id="bio"><p>Привет! Меня зовут Саша, и я хочу рассказать вам немного о себе.<br><br>
+              <div class="bio">
+                <div>
+                  <p>Привет! Меня зовут Саша, и я хочу рассказать вам немного о себе.<br><br>
                     На протяжении большей части своей жизни я работала в сфере IT. Однако, с наступлением ковида, все изменилось.  Я нашла себя в керамике и уже 5 лет с удовольствием занимаюсь этим удивительным искусством.<br><br>
                     Для меня керамика стала способом выразить свое внутреннее "я". Мои работы отличаются от традиционных стилей. Они имеют необычные и мрачные элементы, которые могут не всем прийтись по душе. Несмотря на то, что мои работы могут вызывать разные эмоции, я не смущаюсь и искренне верю, что искусство должно вызывать разговор и заставлять задуматься.<br><br>
-                    Надеюсь, что мои работы в керамике смогут вдохновить и провокировать мысли у людей. Если у вас есть вопросы обо мне, моем опыте в керамике или моих работах, не стесняйтесь задавать их через форму обратной связи. Я всегда открыта для общения и обмена идеями. </p></div>
-                    <div class="col-4"><img src="/img/bio.jpg" class="img-fluid"></div>
+                    Надеюсь, что мои работы в керамике смогут вдохновить и провокировать мысли у людей. Если у вас есть вопросы обо мне, моем опыте в керамике или моих работах, не стесняйтесь задавать их через форму обратной связи. Я всегда открыта для общения и обмена идеями. </p>
                 </div>
+                <div><img src="/img/bio.jpg"></div>
               </div>
             </section>
             <br>
@@ -332,24 +333,11 @@
 
 <!-- footer start -->
         <footer>
+          
         </footer>
  <!-- footer end -->
 <!-- scrypts -->
-        <script>
-          async function sendForm(form) {
-        let responce = await fetch("php/reg_obr.php", {
-        method: "POST",
-        body: new FormData(form),
-        });
-        let result = await responce.text();
 
-        if (result == "ok") {
-          alert("Отзыв успешно отправлен!");
-        } else if (result == "exist") {
-          info.innerText = "<h1>Вы уже отправляли отзыв!</h1>";
-        }
-      }
-        </script>
         <script
         src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
