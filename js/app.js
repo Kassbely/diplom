@@ -1,20 +1,3 @@
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
-
-// Include Lightbox 
-import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.js';
-
-const lightbox = new PhotoSwipeLightbox({
-  // may select multiple "galleries"
-  gallery: '#gallery--getting-started',
-
-  // Elements within gallery (slides)
-  children: 'a',
-
-  // setup PhotoSwipe Core dynamic import
-  pswpModule: () => import('/photoswipe/photoswipe.esm.js')
-});
-lightbox.init();
 
 
 async function sendForm(form) {
@@ -52,16 +35,33 @@ $('.owl-carousel').owlCarousel({
   center: true,
   loop: true,
   items: 1,
-  lazyLoad:true,
+  // lazyLoad:true,
   touchDrag:true,
   mouseDrag:true,
   mergeFit:true,
-  lazyLoadEager: true,
+  // lazyLoadEager: true,
 });
 
+document.addEventListener('keydown', function(KeyboardEvent) {
+  if (KeyboardEvent.keyCode == '37') {
+    document.querySelector('.owl-prev').click();
+  } else if (KeyboardEvent.keyCode == '39') {
+    document.querySelector('.owl-next').click();
+  }
+});
 
 // $('.portfolio-item').click(function() {
 //   var imageSource = $(this).find('img').attr('src');
 //   $('#modalImage').attr('src', imageSource);
 //   $('#myModal').modal('show');
 // });
+// var url = '';
+ 
+// $(document).ready(function() {
+//     $('#container').html(`<img src='${url}'>`);
+// });
+// let pic1 = '/img/item1/1.jpg';
+// let pic2 = '/img/item1/2.jpg';
+// document.getElementById('item1').onclick = function() {
+//   document.getElementsById('itemPic1').src = pic1;
+// }

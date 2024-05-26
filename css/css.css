@@ -47,29 +47,31 @@ main {
     padding-left: 10px;
 }
 .avatar {
-    display: flex;
-    max-inline-size: 40%;
-    border-radius: 50%;  
-    border: 3px solid #fff;
-    margin: auto;
-    margin-bottom: 5rem;
-    }
+  width: 80%;
+  border-radius: 50%;  
+  border: 3px solid #fff;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
 li {
     text-align: center;
     list-style-type: none; /* Убирает буллиты */
     margin-bottom: 5px;
     margin-top: 5px;
 }
+
 ul {
   padding: 10px;
-
 }
+u {
+  text-decoration-style: double;
+}
+
 a {
-    text-decoration: none;
-    color: rgb(77, 76, 76);
-    font-size: 1.2rem;
-    font-weight: bold;
-    
+  color: rgb(77, 76, 76);
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 p {
   font-weight: 400;
@@ -217,6 +219,12 @@ padding-top: 0;
   0%    {opacity: 0;}
   100%  {opacity: 1;}
 }
+
+
+.itemImg img{
+  overflow: hidden;
+}
+
 
 /* owl slider */
 .owl-carousel {
@@ -452,4 +460,3 @@ dialog::backdrop {
     font-size: 1rem;
   }
 }
-
