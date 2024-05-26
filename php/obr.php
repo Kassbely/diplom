@@ -11,7 +11,6 @@ $mysqli = mysqli_connect($host, $user, $password, $db);
 if ($mysqli == false) {
      print("error");
 } else {
-     print("Соединение установлено успешно");
      $name = $_POST["name"];
      $email = trim(mb_strtolower($_POST["email"]));
      $comment = htmlspecialchars($_POST["comment"]);
@@ -19,8 +18,7 @@ if ($mysqli == false) {
      $result = $mysqli->query("SELECT * FROM `users` WHERE `email` = '$email'");
 
      if ($result->num_rows != 0) {
-          infotext.innerText = 'Вы уже отправляла отзыв с данным email!';
-     
+          print("exist");
      } else {
           $mysqli->query("INSERT INTO `users`(`name`, `email`, `comment`) VALUES ('$name', '$email', '$comment')");
           print("ok");

@@ -364,7 +364,7 @@ dialog::backdrop {
     padding: 10px;
   }
   .portfolio-item img{
-    height: 10rem
+    height: 20rem
  }
 }
 @media (max-width:991px){
@@ -379,7 +379,7 @@ dialog::backdrop {
     font-size: 1rem;
   }
   .portfolio-item img{
-    height: 30rem
+    height: 20rem
  }
 }
 @media (max-width:810px){
