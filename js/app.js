@@ -42,11 +42,18 @@ $('.owl-carousel').owlCarousel({
   // lazyLoadEager: true,
 });
 
+
 document.addEventListener('keydown', function(KeyboardEvent) {
+  let prev = document.querySelectorAll('.owl-prev');
+  let next = document.querySelectorAll('.owl-next');
   if (KeyboardEvent.keyCode == '37') {
-    document.querySelector('.owl-prev').click();
+    prev.forEach(function(element) {
+      element.click();
+    });
   } else if (KeyboardEvent.keyCode == '39') {
-    document.querySelector('.owl-next').click();
+    next.forEach(function(element) {
+      element.click();
+    });
   }
 });
 
