@@ -32,43 +32,80 @@ $('.owl-carousel').owlCarousel({
   nav: true,
   navElement: 'button',
   navText: ['<i class="fa fa-angle-left"></i>', '  <i class="fa fa-angle-right"></i>'],
-  center: true,
   loop: true,
   items: 1,
-  // lazyLoad:true,
   touchDrag:true,
   mouseDrag:true,
-  mergeFit:true,
-  // lazyLoadEager: true,
 });
-
-
+let prevButton = document.querySelectorAll('.owl-prev');
+let nextButton = document.querySelectorAll('.owl-next');
 document.addEventListener('keydown', function(KeyboardEvent) {
-  let prev = document.querySelectorAll('.owl-prev');
-  let next = document.querySelectorAll('.owl-next');
   if (KeyboardEvent.keyCode == '37') {
-    prev.forEach(function(element) {
+    prevButton.forEach(function(element) {
       element.click();
     });
   } else if (KeyboardEvent.keyCode == '39') {
-    next.forEach(function(element) {
+    nextButton.forEach(function(element) {
       element.click();
     });
   }
 });
 
-// $('.portfolio-item').click(function() {
-//   var imageSource = $(this).find('img').attr('src');
-//   $('#modalImage').attr('src', imageSource);
-//   $('#myModal').modal('show');
-// });
-// var url = '';
- 
-// $(document).ready(function() {
-//     $('#container').html(`<img src='${url}'>`);
-// });
-// let pic1 = '/img/item1/1.jpg';
-// let pic2 = '/img/item1/2.jpg';
-// document.getElementById('item1').onclick = function() {
-//   document.getElementsById('itemPic1').src = pic1;
-// }
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   let prevButton = document.querySelector(".owl-prev");
+//   let nextButton = document.querySelector(".owl-next");
+//   let imageElements = document.querySelectorAll(".itemImg img");
+
+//   prevButton.addEventListener("click", function() {
+//     for (let i = 0; i < imageElements.length; i++) {
+//       if (imageElements[i].hasAttribute("hidden")) {
+//         imageElements[i].removeAttribute("hidden");
+//       }
+//     }
+//   });
+
+//   nextButton.addEventListener("click", function() {
+//     for (let i = imageElements.length - 1; i >= 0; i--) {
+//       if (imageElements[i].hasAttribute("hidden")) {
+//         imageElements[i].removeAttribute("hidden");
+//       }
+//     }
+//   });
+// });\
+
+
+
+
+let prevButtons = document.querySelectorAll(".owl-prev");
+let nextButtons = document.querySelectorAll(".owl-next");
+
+prevButtons.forEach(function(prevButton) {
+  prevButton.addEventListener("click", function() {
+    let modalContent = this.closest(".modal-content");
+    let imageElements = modalContent.querySelectorAll(".itemImg");
+    let currentIndex = Array.from(imageElements).findIndex(function(imageElement) {
+      return !imageElement.hasAttribute("hidden");
+    });
+
+    if (currentIndex > 0) {
+      imageElements[currentIndex].setAttribute("hidden", "true");
+      imageElements[currentIndex - 1].removeAttribute("hidden");
+    }
+  });
+});
+
+nextButtons.forEach(function(nextButton) {
+  nextButton.addEventListener("click", function() {
+    let modalContent = this.closest(".modal-content");
+    let imageElements = modalContent.querySelectorAll(".itemImg");
+    let currentIndex = Array.from(imageElements).findIndex(function(imageElement) {
+      return !imageElement.hasAttribute("hidden");
+    });
+
+    if (currentIndex < imageElements.length - 1) {
+      imageElements[currentIndex].setAttribute("hidden", "true");
+      imageElements[currentIndex + 1].removeAttribute("hidden");
+    }
+  });
+});
